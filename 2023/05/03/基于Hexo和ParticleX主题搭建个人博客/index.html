@@ -171,6 +171,15 @@
             2023/5/3
         </span>
         
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
         
         <span class="tags">
             <span class="icon">
@@ -179,7 +188,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Hexo-ParticleX-%E5%8D%9A%E5%AE%A2/" style="color: #ffa2c4">Hexo,ParticleX,博客</a>
+                <a href="/tags/Hexo-ParticleX-%E5%8D%9A%E5%AE%A2/" style="color: #00bcd4">Hexo ParticleX 博客</a>
             </span>
             
         </span>
@@ -193,8 +202,7 @@
 <li>在要访问GitHub的时候，打开工具，即可快速访问GitHub。</li>
 </ul>
 <h2 id="一-本地部署个人博客"><a href="#一-本地部署个人博客" class="headerlink" title="一.本地部署个人博客"></a>一.本地部署个人博客</h2><h3 id="1-搭建环境"><a href="#1-搭建环境" class="headerlink" title="1.搭建环境"></a>1.搭建环境</h3><blockquote>
-<p>###软件要求  </p>
-<ul>
+<h3 id="软件要求"><a href="#软件要求" class="headerlink" title="软件要求"></a>软件要求</h3><ul>
 <li>Git       推荐	<a target="_blank" rel="noopener" href="https://registry.npmmirror.com/binary.html?path=git-for-windows/">阿里镜像</a>(<a target="_blank" rel="noopener" href="https://git-scm.com/">Git官方</a>下载较慢)</li>
 <li>Node.js	<a target="_blank" rel="noopener" href="https://nodejs.cn/download/">Node.js中文网</a></li>
 <li>域名(可不选，机构审核可能需要几天时间，建议提前做好准备)</li>
@@ -273,19 +281,12 @@ deploy: # 部署设置
 include: # 包括隐藏文件
 exclude: # 排除文件/文件夹
 ignore: # 忽略文件/文件夹
-```	
-
-根据自己的想法以及所选主题的要求修改参数即可
-
-更多参数参考[Hexo为文档](https://hexo.io/zh-cn/docs/configuration.html)
-
-#### 举个栗子(安装ParticleX主题)
-
-我的主题为:[ParticleX](https://github.com/argvchs/hexo-theme-particlex)
-
-在themes文件夹下输入命令
-```bash
-#将ParticleX主题下载到themes中
+</code></pre>
+<p>根据自己的想法以及所选主题的要求修改参数即可</p>
+<p>更多参数参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html">Hexo为文档</a></p>
+<h4 id="举个栗子-安装ParticleX主题"><a href="#举个栗子-安装ParticleX主题" class="headerlink" title="举个栗子(安装ParticleX主题)"></a>举个栗子(安装ParticleX主题)</h4><p>我的主题为:<a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX</a></p>
+<p>在themes文件夹下输入命令</p>
+<pre><code class="bash">#将ParticleX主题下载到themes中
 git clone https://github.com/argvchs/hexo-theme-particlex.git particlex --depth=1 
 </code></pre>
 <p>安装完成后<br>打开博客根目录下的<code>-config.yml</code>文件,找到<code>theme</code>并将其参数设置为ParticleX</p>
@@ -299,7 +300,7 @@ git clone https://github.com/argvchs/hexo-theme-particlex.git particlex --depth=
 hexo new page categories
 </code></pre>
 <ul>
-<li>添加分类<br>打开 <code>source/categories/index.md</code><br>在两条 <code>---`` 之间添加 </code>type: categories&#96;<br>注意:type后的”:”和”categories”之间有空格</li>
+<li>添加分类<br>打开 <code>source/categories/index.md</code><br>在两条 <code>---</code> 之间添加 <code>type: categories</code><br>注意:type后的<code>:</code>和<code>categories</code>之间有空格</li>
 </ul>
 <p>创建标签页</p>
 <ul>
@@ -309,7 +310,7 @@ hexo new page categories
 hexo new page tags
 </code></pre>
 <ul>
-<li>添加分类<br>打开 <code>source/tags/index.md</code><br>在两条 <code>---`` 之间添加 </code>type: tags&#96;<br>注意:type后的”:”和”categories”之间有空格</li>
+<li>添加分类<br>打开 <code>source/tags/index.md</code><br>在两条 <code>---</code> 之间添加 <code>type: tags</code><br>注意:type后的<code>:</code>和<code>categories</code>之间有空格</li>
 </ul>
 <p>创建关于页</p>
 <ul>
@@ -370,7 +371,7 @@ hexo new page about
 </ul>
 <pre><code class="js">function _createForOfIteratorHelper(e,t)&#123;var n,r,o,a,i=&quot;undefined&quot;!=typeof Symbol&amp;&amp;e[Symbol.iterator]||e[&quot;@@iterator&quot;];if(i)return r=!(n=!0),&#123;s:function()&#123;i=i.call(e)&#125;,n:function()&#123;var e=i.next();return n=e.done,e&#125;,e:function(e)&#123;r=!0,o=e&#125;,f:function()&#123;try&#123;n||null==i.return||i.return()&#125;finally&#123;if(r)throw o&#125;&#125;&#125;;if(Array.isArray(e)||(i=_unsupportedIterableToArray(e))||t&amp;&amp;e&amp;&amp;&quot;number&quot;==typeof e.length)return i&amp;&amp;(e=i),a=0,&#123;s:t=function()&#123;&#125;,n:function()&#123;return a&gt;=e.length?&#123;done:!0&#125;:&#123;done:!1,value:e[a++]&#125;&#125;,e:function(e)&#123;throw e&#125;,f:t&#125;;throw new TypeError(&quot;Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.&quot;)&#125;function _unsupportedIterableToArray(e,t)&#123;var n;if(e)return&quot;string&quot;==typeof e?_arrayLikeToArray(e,t):&quot;Map&quot;===(n=&quot;Object&quot;===(n=Object.prototype.toString.call(e).slice(8,-1))&amp;&amp;e.constructor?e.constructor.name:n)||&quot;Set&quot;===n?Array.from(e):&quot;Arguments&quot;===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?_arrayLikeToArray(e,t):void 0&#125;function _arrayLikeToArray(e,t)&#123;(null==t||t&gt;e.length)&amp;&amp;(t=e.length);for(var n=0,r=new Array(t);n&lt;t;n++)r[n]=e[n];return r&#125;!function()&#123;function t(e,t,n)&#123;return(1-n)*e+n*t&#125;var n=document.getElementById(&quot;cursor&quot;),r=&#123;pre:null,now:null&#125;,o=document.getElementsByTagName(&quot;*&quot;),a=[];window.addEventListener(&quot;load&quot;,function()&#123;var e,t=_createForOfIteratorHelper(o);try&#123;for(t.s();!(e=t.n()).done;)&#123;var n=e.value;&quot;pointer&quot;==window.getComputedStyle(n).cursor&amp;&amp;a.push(n.outerHTML)&#125;&#125;catch(e)&#123;t.e(e)&#125;finally&#123;t.f()&#125;var r=document.createElement(&quot;style&quot;);r.innerHTML=&#39;* &#123; cursor: url(&quot;data:image/svg+xml, &lt;svg xmlns=\\&quot;http://www.w3.org/2000/svg\\&quot; viewBox=\\&quot;0 0 8 8\\&quot; width=\\&quot;8px\\&quot; height=\\&quot;8px\\&quot;&gt;&lt;circle cx=\\&quot;4\\&quot; cy=\\&quot;4\\&quot; r=\\&quot;4\\&quot; opacity=\\&quot;.5\\&quot;/&gt;&lt;/svg&gt;&quot;) 4 4, auto !important; &#125;&#39;,document.body.appendChild(r)&#125;),document.addEventListener(&quot;mouseover&quot;,function(e)&#123;a.includes(e.target.outerHTML)&amp;&amp;n.classList.add(&quot;hover&quot;)&#125;),document.addEventListener(&quot;mouseout&quot;,function(e)&#123;a.includes(e.target.outerHTML)&amp;&amp;n.classList.remove(&quot;hover&quot;)&#125;),document.addEventListener(&quot;mousemove&quot;,function(e)&#123;r.now||(n.style.left=e.clientX-8+&quot;px&quot;,n.style.top=e.clientY-8+&quot;px&quot;),r.now=&#123;x:e.clientX-8,y:e.clientY-8&#125;,n.classList.add(&quot;visible&quot;)&#125;),document.addEventListener(&quot;mouseenter&quot;,function()&#123;n.classList.add(&quot;visible&quot;),r.pre=null&#125;),document.addEventListener(&quot;mouseleave&quot;,function()&#123;n.classList.remove(&quot;visible&quot;)&#125;),document.addEventListener(&quot;mousedown&quot;,function()&#123;n.classList.add(&quot;active&quot;)&#125;),document.addEventListener(&quot;mouseup&quot;,function()&#123;n.classList.remove(&quot;active&quot;)&#125;);requestAnimationFrame(function e()&#123;r.pre?(r.pre=&#123;x:t(r.pre.x,r.now.x,.15),y:t(r.pre.y,r.now.y,.15)&#125;,n.style.left=r.pre.x+&quot;px&quot;,n.style.top=r.pre.y+&quot;px&quot;):r.pre=r.now,requestAnimationFrame(e)&#125;)&#125;();
 </code></pre>
-<p>更多自定义设置请参考<a target="_blank" rel="noopener" href="https://argvchs.github.io/">Argvchs</a>在<a target="_blank" rel="noopener" href="https://argvchs.github.io/2022/04/17/hexo-blog-3/">Hexo 博客搭建Ⅲ</a></p>
+<p>更多自定义设置请参考<a target="_blank" rel="noopener" href="https://argvchs.github.io/">Argvchs</a>大佬在<a target="_blank" rel="noopener" href="https://argvchs.github.io/2022/04/17/hexo-blog-3/">Hexo 博客搭建Ⅲ</a></p>
 <h2 id="二-将博客部署到Github-Pages上"><a href="#二-将博客部署到Github-Pages上" class="headerlink" title="二.将博客部署到Github Pages上"></a>二.将博客部署到Github Pages上</h2><h3 id="1-配置SSH密钥-实现本地代码与Github代码库同步"><a href="#1-配置SSH密钥-实现本地代码与Github代码库同步" class="headerlink" title="1.配置SSH密钥(实现本地代码与Github代码库同步)"></a>1.配置SSH密钥(实现本地代码与Github代码库同步)</h3><p>前往<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>的个人主页(若无则先创建账号)</p>
 <p>点击<code>New</code>新建仓库,名称为<code>&lt;Github用户名&gt;.github.io</code>,然后点击<code>Create repositpory</code>完成创建</p>
 <p>在个人博客根目录下，右键鼠标，选择<code>Git Bash Here</code></p>
