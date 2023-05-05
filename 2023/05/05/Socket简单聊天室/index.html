@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>Qheの小窝</title>
+        <title>Socket简单聊天室 | Qheの小窝</title>
         <meta name="author" content="Qhe" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -32,7 +32,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -157,31 +159,17 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg,/images/background2.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Qheの小窝</h1>
-                <h3>云横雾里，水纵方秋</h3>
-                <h5></h5>
-            </div>
-        </span>
+                    <div class="article">
+    <div>
+        <h1>Socket简单聊天室</h1>
     </div>
-</div>
-<div id="home-posts-wrap"  ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/05/05/Socket%E7%AE%80%E5%8D%95%E8%81%8A%E5%A4%A9%E5%AE%A4/">
-        <h2 class="post-title">Socket简单聊天室</h2>
-    </a>
-    <div class="category-and-date">
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/5
+        </span>
         
         <span class="category">
             <a href="/categories/Java/">
@@ -192,19 +180,33 @@
             </a>
         </span>
         
-        <span class="date">
+        
+        <span class="tags">
             <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
+                <i class="fa-solid fa-tags fa-fw"></i>
             </span>
-            2023/5/5
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #ffa2c4">Java</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Socket/" style="color: #ffa2c4">Socket</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="color: #00a596">网络编程</a>
+            </span>
+            
         </span>
         
-        
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><strong>所用知识</strong>: GUI、Socket、多线程、单例模式.  </p>
+    
+    <div class="content" v-pre>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><strong>所用知识</strong>: GUI、Socket、多线程、单例模式.  </p>
 <p><strong>交互模式</strong>: C&#x2F;S模式  </p>
 <p><strong>辅助工具</strong>: WindowBuilder(可视化快速搭建GUI界面)  </p>
 <p><strong>环境</strong>: eclipse、Java8</p>
@@ -1152,531 +1154,13 @@ public class SocketThread extends Thread&#123;
 <p>当然，本程序只是作为Socket和多线程入门的综合练手程序，着重点还是用Socket进行应用程序间的通信。故而在本程序中，对于其他细节问题并未做出过多要求。</p>
 <p>本程序也存在一些逻辑上不合理的地方和很多还可以优化的地方（为什么不改？我太菜了T.T）  </p>
 
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Java/" style="color: #03a9f4">Java</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Socket/" style="color: #03a9f4">Socket</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="color: #ff7d73">网络编程</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/05/Socket%E7%AE%80%E5%8D%95%E8%81%8A%E5%A4%A9%E5%AE%A4/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/05/03/Sublime-Text3%E5%86%85%E7%BD%AE%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%B9%E6%B3%95/">
-        <h2 class="post-title">Sublime Text3内置重命名方法</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="选择Sublime-Text要重命名的文件"><a href="#选择Sublime-Text要重命名的文件" class="headerlink" title="选择Sublime Text要重命名的文件"></a>选择Sublime Text要重命名的文件</h3><h3 id="按Ctrl-Shift-P-打开Package-Manager"><a href="#按Ctrl-Shift-P-打开Package-Manager" class="headerlink" title="按Ctrl + Shift + P 打开Package Manager"></a>按<code>Ctrl</code> + <code>Shift</code> + <code>P</code> 打开Package Manager</h3><h3 id="输入Rename-File-按下回车"><a href="#输入Rename-File-按下回车" class="headerlink" title="输入Rename File,按下回车"></a>输入<code>Rename File</code>,按下回车</h3><h3 id="输入新名字，回车提交"><a href="#输入新名字，回车提交" class="headerlink" title="输入新名字，回车提交"></a>输入新名字，回车提交</h3>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Sublime-Text3/" style="color: #00bcd4">Sublime Text3</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/03/Sublime-Text3%E5%86%85%E7%BD%AE%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%B9%E6%B3%95/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/05/03/%E5%9F%BA%E4%BA%8EHexo%E5%92%8CParticleX%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-        <h2 class="post-title">基于Hexo和ParticleX主题搭建个人博客</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="基于Hexo和ParticleX主题搭建个人博客"><a href="#基于Hexo和ParticleX主题搭建个人博客" class="headerlink" title="基于Hexo和ParticleX主题搭建个人博客"></a>基于Hexo和ParticleX主题搭建个人博客</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本站基于<a target="_blank" rel="noopener" href="https://argvchs.github.io/">Argvchs</a>大佬的<a target="_blank" rel="noopener" href="https://argvchs.github.io/2022/04/17/hexo-blog-1/">Hexo 博客搭建</a>教程建成。<br>结合一下我自己建站的经历和建站时遇到的一些问题，作此教程，希望能够为大家带来帮助。<br>推荐工具:</p>
-<ul>
-<li>GitHub有时登陆不上，Windows推荐工具<a target="_blank" rel="noopener" href="https://github.com/dotnetcore/FastGithub.git">FastGithub</a>,在右方的release处下载（带exe可执行文件)  </li>
-<li>在要访问GitHub的时候，打开工具，即可快速访问GitHub。</li>
-</ul>
-<h2 id="一-本地部署个人博客"><a href="#一-本地部署个人博客" class="headerlink" title="一.本地部署个人博客"></a>一.本地部署个人博客</h2><h3 id="1-搭建环境"><a href="#1-搭建环境" class="headerlink" title="1.搭建环境"></a>1.搭建环境</h3><blockquote>
-<h3 id="软件要求"><a href="#软件要求" class="headerlink" title="软件要求"></a>软件要求</h3><ul>
-<li>Git       推荐	<a target="_blank" rel="noopener" href="https://registry.npmmirror.com/binary.html?path=git-for-windows/">阿里镜像</a>(<a target="_blank" rel="noopener" href="https://git-scm.com/">Git官方</a>下载较慢)</li>
-<li>Node.js	<a target="_blank" rel="noopener" href="https://nodejs.cn/download/">Node.js中文网</a></li>
-<li>域名(可不选，机构审核可能需要几天时间，建议提前做好准备)</li>
-</ul>
-</blockquote>
-<h4 id="检验环境是否安装成功"><a href="#检验环境是否安装成功" class="headerlink" title="检验环境是否安装成功"></a>检验环境是否安装成功</h4><p>win + R ，输入CMD打开命令行界面,分别输入下方命令检测是否安装成功(有版本号即安装成功)。</p>
-<pre><code class="cmd">git --version
-node -v
-</code></pre>
-<h3 id="2-开启Corepack-可选-Node-js安装伴随npm"><a href="#2-开启Corepack-可选-Node-js安装伴随npm" class="headerlink" title="2.开启Corepack(可选,Node.js安装伴随npm)"></a>2.开启Corepack(可选,Node.js安装伴随npm)</h3><p>启用Corepack后自动安装Yarn和PNPM(包管理器，便于下载资源)<br>启用命令<br>提示:前往目录C:\Windows\System32以管理员身份打开cmd.exe(命令行界面)</p>
-<pre><code class="cmd">corepack enable
-</code></pre>
-<p>关于npm、pnpm、Yarn以及Yarn PnP的速度效率<a target="_blank" rel="noopener" href="https://argvchs.github.io/">Argvchs</a>大佬在<a target="_blank" rel="noopener" href="https://argvchs.github.io/2022/04/17/hexo-blog-1/">Hexo 博客搭建Ⅰ</a>进行了比较，感兴趣的朋友可前去自行观看。  </p>
-<h3 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h3><p>新建个人博客文件夹(博客相关文件存储于此),路径不要有中文。<br>进入该文件夹，鼠标右键空白处，选择 Git Bush Here<br>输入下列命令，安装并初始化Hexo  </p>
-<pre><code class="bash">#安装Hexo
-pnpm add hexo-cli -g
-#初始化Hexo
-hexo init --no-install
-pnpm i
-</code></pre>
-<h3 id="4-查看效果"><a href="#4-查看效果" class="headerlink" title="4.查看效果"></a>4.查看效果</h3><p>开启博客服务器</p>
-<pre><code class="bash">#生成博客相关页面的静态文件，g即generate(生成)。
-hexo g
-#本地运行博客，s即server(服务器)。
-hexo s
-</code></pre>
-<p>开启后，浏览器输入网址 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 进行查看<br>(默认开启端口为4000，若想更改,则在运行博客指令后加上 -p 端口号,例如,hexo s -p 8080,即在8080端口运行)</p>
-<p>若成功显示Hexo界面，则取得阶段性胜利,加油加油再接再厉！</p>
-<h3 id="5-安装主题-让博客更好看的魔法"><a href="#5-安装主题-让博客更好看的魔法" class="headerlink" title="5.安装主题(让博客更好看的魔法)"></a>5.安装主题(让博客更好看的魔法)</h3><h4 id="5-1首先选择心仪的主题"><a href="#5-1首先选择心仪的主题" class="headerlink" title="5.1首先选择心仪的主题"></a>5.1首先选择心仪的主题</h4><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">点我传送</a>  (Windows访问GitHub推荐工具<a target="_blank" rel="noopener" href="https://github.com/dotnetcore/FastGithub.git">FastGithub</a>)</p>
-<p>提示:  </p>
-<ul>
-<li>点击图片查看主题样式  </li>
-<li>点击下的主题名进入Github项目页面,点击绿色的Code按钮，选择Clone下的HTTPS,复制项目路径</li>
-</ul>
-<h4 id="5-2安装主题"><a href="#5-2安装主题" class="headerlink" title="5.2安装主题"></a>5.2安装主题</h4><p>找到博客的根目录(第3步创建的博客文件夹),进入themes文件夹<br>鼠标右键空白处，选择 Git Bush Here<br>输入下列命令</p>
-<pre><code class="bash">#将别人上传的主题文件下载到自己博客文件夹的themes目录中
-git clone &lt;复制的内容&gt; &lt;复制的主题的名字&gt; --depth=1 
-</code></pre>
-<h4 id="5-3配置网页参数"><a href="#5-3配置网页参数" class="headerlink" title="5.3配置网页参数"></a>5.3配置网页参数</h4><p>打开根目录下的_config.yml文件</p>
-<p>找到theme:<br>将后面内容改为自己主题的名字<br>例如:</p>
-<pre><code class="yaml">theme: particlex
-</code></pre>
-<p>更多参数如下</p>
-<pre><code class="yaml">title: # 标题
-subtitle: # 副标题
-description: # 描述
-keywords: # 关键字
-author: # 作者
-language: # 语言
-timezone: # 时区
-url: # 网址
-root: # 根目录
-permalink: # 文章链接格式
-permalink_defaults: # 链接默认值
-source_dir: # 源文件夹，内容的存储位置
-public_dir: # 公用文件夹，静态文件的生成位置
-tag_dir: # 标签目录
-archive_dir: # 存档目录
-category_dir: # 分类目录
-skip_render: # 复制到原始路径，不进行渲染
-new_post_name: # 新帖子的文件名格式
-titlecase: # 将标题转换为小写1/大写2
-external_link.enable: # 在新标签页中打开外部链接
-post_asset_folder: # 启用资源文件夹功能
-filename_case: # 将文件名转换小写小写1/大写2
-relative_link: # 是否创建相对于根文件夹的链接
-index_generator.per_page: # 每页显示的文章数
-index_generator.order_by: # 发布顺序
-date_format: # 日期格式
-time_format: # 时间格式
-per_page: # 每个页面上显示的文章数
-pagination_dir: # 网址格式
-theme: # 主题名称
-theme_config: # 主题配置，覆盖主题默认值
-deploy: # 部署设置
-include: # 包括隐藏文件
-exclude: # 排除文件/文件夹
-ignore: # 忽略文件/文件夹
-</code></pre>
-<p>根据自己的想法以及所选主题的要求修改参数即可</p>
-<p>更多参数参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html">Hexo为文档</a></p>
-<h4 id="举个栗子-安装ParticleX主题"><a href="#举个栗子-安装ParticleX主题" class="headerlink" title="举个栗子(安装ParticleX主题)"></a>举个栗子(安装ParticleX主题)</h4><p>我的主题为:<a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX</a></p>
-<p>在themes文件夹下输入命令</p>
-<pre><code class="bash">#将ParticleX主题下载到themes中
-git clone https://github.com/argvchs/hexo-theme-particlex.git particlex --depth=1 
-</code></pre>
-<p>安装完成后<br>打开博客根目录下的<code>-config.yml</code>文件,找到<code>theme</code>并将其参数设置为ParticleX</p>
-<pre><code class="yaml">theme: particlex
-</code></pre>
-<h5 id="创建ParticleX主题特殊页面-分类页面、标签页面、关于-about-页面"><a href="#创建ParticleX主题特殊页面-分类页面、标签页面、关于-about-页面" class="headerlink" title="创建ParticleX主题特殊页面(分类页面、标签页面、关于(about)页面)"></a>创建ParticleX主题特殊页面(分类页面、标签页面、关于(about)页面)</h5><p>创建分类页面</p>
-<ul>
-<li>创建页面</li>
-</ul>
-<pre><code class="bash">#创建页面命令:hexo new page 页面名称
-hexo new page categories
-</code></pre>
-<ul>
-<li>添加分类<br>打开 <code>source/categories/index.md</code><br>在两条 <code>---</code> 之间添加 <code>type: categories</code><br>注意:type后的<code>:</code>和<code>categories</code>之间有空格</li>
-</ul>
-<p>创建标签页</p>
-<ul>
-<li>创建页面</li>
-</ul>
-<pre><code class="bash">#创建页面命令:hexo new page 页面名称
-hexo new page tags
-</code></pre>
-<ul>
-<li>添加分类<br>打开 <code>source/tags/index.md</code><br>在两条 <code>---</code> 之间添加 <code>type: tags</code><br>注意:type后的<code>:</code>和<code>categories</code>之间有空格</li>
-</ul>
-<p>创建关于页</p>
-<ul>
-<li>创建页面</li>
-</ul>
-<pre><code class="bash">#创建页面命令:hexo new page 页面名称
-hexo new page about
-</code></pre>
-<ul>
-<li>添加内容<br>打开 <code>source/tags/index.md</code><br>在两条 <code>---</code> 之后添加自己想要添加的内容</li>
-</ul>
-<h5 id="添加特效"><a href="#添加特效" class="headerlink" title="添加特效"></a>添加特效</h5><p>鼠标点击特效</p>
-<ul>
-<li>找到<code>themes/practicex/layout/layout.ejs</code>,在<code>&lt;body&gt;&lt;body/&gt;</code>标签之间<br>添加如下内容:</li>
-</ul>
-<pre><code class="html">&lt;canvas
-    id=&quot;fireworks&quot;
-    style=&quot;position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767&quot;
-&gt;&lt;/canvas&gt;
-&lt;script src=&quot;https://cdn.staticfile.org/animejs/3.2.1/anime.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;/js/fireworks.min.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-<ul>
-<li>找到<code>themes/practicex/source/js</code>,添加<code>fireworks.min.js</code>文件(可新建空txt文件，重命名fireworks.min.js)<br>添加如下内容:</li>
-</ul>
-<pre><code class="js">!function()&#123;function i()&#123;scale=window.devicePixelRatio||1,n.width=window.innerWidth*scale,n.height=window.innerHeight*scale,u.scale(scale,scale)&#125;function r(n)&#123;-1&lt;(n=d.indexOf(n))&amp;&amp;d.splice(n,1)&#125;function e(n,e)&#123;i();var t,a=function(n,e)&#123;for(var t=[],a=0;a&lt;24;a++)&#123;var i=function(n,e)&#123;var t=&#123;&#125;;return t.x=n,t.y=e,t.color=c[anime.random(0,c.length-1)],t.radius=anime.random(o(),2*o()),t.draw=function()&#123;u.beginPath(),u.arc(t.x,t.y,t.radius,0,2*Math.PI,!0),u.fillStyle=t.color,u.fill()&#125;,t&#125;(n,e);t.push(i)&#125;return t&#125;(n,e),n=(e=e,(t=&#123;&#125;).x=n,t.y=e,t.color=c[anime.random(0,c.length-1)],t.color=&quot;#FFF&quot;,t.radius=0,t.alpha=1,t.lineWidth=6,t.draw=function()&#123;u.globalAlpha=t.alpha,u.beginPath(),u.arc(t.x,t.y,t.radius,0,2*Math.PI,!0),u.lineWidth=t.lineWidth,u.strokeStyle=t.color,u.stroke(),u.globalAlpha=1&#125;,t),e=anime(&#123;targets:a,x:function(n)&#123;return n.x+anime.random(-200,200)&#125;,y:function(n)&#123;return n.y+anime.random(-200,200)&#125;,radius:0,duration:function()&#123;return anime.random(1200,1800)&#125;,easing:&quot;easeOutExpo&quot;,complete:r&#125;),a=anime(&#123;targets:n,radius:function()&#123;return anime.random(8.75*o(),11.25*o())&#125;,lineWidth:0,alpha:&#123;value:0,easing:&quot;linear&quot;,duration:function()&#123;return anime.random(400,600)&#125;&#125;,duration:function()&#123;return anime.random(1200,1800)&#125;,easing:&quot;easeOutExpo&quot;,complete:r&#125;);d.push(e),d.push(a)&#125;var t,a,o=function()&#123;return parseFloat(getComputedStyle(document.documentElement).fontSize)&#125;,n=document.getElementById(&quot;fireworks&quot;),u=n.getContext(&quot;2d&quot;),d=[],c=[&quot;#ff324a&quot;,&quot;#31ffa6&quot;,&quot;#206eff&quot;,&quot;#ffff99&quot;];anime(&#123;duration:1/0,update:function()&#123;u.clearRect(0,0,n.width,n.height),d.forEach(function(n)&#123;n.animatables.forEach(function(n)&#123;n.target.draw()&#125;)&#125;)&#125;&#125;),document.addEventListener(&quot;mousedown&quot;,function(n)&#123;t=n.clientX,a=n.clientY,e(t,a)&#125;,!1),window.addEventListener(&quot;resize&quot;,i,!1)&#125;();
-</code></pre>
-<p>流星背景特效</p>
-<ul>
-<li>找到<code>themes/practicex/layout/layout.ejs</code>,在<code>&lt;body&gt;&lt;body/&gt;</code>标签之间<br>添加如下内容:</li>
-</ul>
-<pre><code class="html">&lt;canvas
-    id=&quot;background&quot;
-    style=&quot;position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1&quot;
-&gt;&lt;/canvas&gt;
-&lt;script src=&quot;/js/background.min.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-<ul>
-<li>找到<code>themes/practicex/source/js</code>,添加<code>background.min.js</code>文件(可新建空txt文件，重命名background.min.js)<br>添加如下内容:</li>
-</ul>
-<pre><code class="js">!function()&#123;var t=(window.innerWidth+window.innerHeight)/8,n=document.getElementById(&quot;background&quot;),e=n.getContext(&quot;2d&quot;),o=1,i=void 0,r=void 0,a=[],d=void 0,h=void 0,y=&#123;x:0,y:0,tx:0,ty:0,z:5e-4&#125;;function x(t)&#123;t.x=Math.random()*i,t.y=Math.random()*r&#125;function m()&#123;o=window.devicePixelRatio||1,i=window.innerWidth*o,r=window.innerHeight*o,n.width=i,n.height=r,a.forEach(x)&#125;for(var c=0;c&lt;t;c++)a.push(&#123;x:0,y:0,z:.2+.8*Math.random()&#125;);m(),function t()&#123;e.clearRect(0,0,i,r),y.tx*=.95,y.ty*=.95,y.x+=.7*(y.tx-y.x),y.y+=.7*(y.ty-y.y),a.forEach(function(t)&#123;var n,a,e;t.x+=y.x*t.z,t.y+=y.y*t.z,t.x+=(t.x-i/2)*y.z*t.z,t.y+=(t.y-r/2)*y.z*t.z,t.z+=y.z,(t.x&lt;-50||t.x&gt;i+50||t.y&lt;-50||t.y&gt;r+50)&amp;&amp;(t=t,n=&quot;z&quot;,a=Math.abs(y.tx),e=Math.abs(y.ty),1&lt;a&amp;&amp;1&lt;e&amp;&amp;(n=&quot;h&quot;==(e&lt;a?Math.random()&lt;Math.abs(y.x)/(a+e)?&quot;h&quot;:&quot;v&quot;:Math.random()&lt;Math.abs(y.y)/(a+e)?&quot;v&quot;:&quot;h&quot;)?0&lt;y.x?&quot;l&quot;:&quot;r&quot;:0&lt;y.y?&quot;t&quot;:&quot;b&quot;),t.z=.2+.8*Math.random(),&quot;z&quot;===n?(t.z=.1,t.x=Math.random()*i,t.y=Math.random()*r):&quot;l&quot;===n?(t.x=-3,t.y=r*Math.random()):&quot;r&quot;===n?(t.x=i+3,t.y=r*Math.random()):&quot;t&quot;===n?(t.x=i*Math.random(),t.y=-3):&quot;b&quot;===n&amp;&amp;(t.x=i*Math.random(),t.y=r+3))&#125;),a.forEach(function(t)&#123;e.beginPath(),e.lineCap=&quot;round&quot;,e.lineWidth=3*t.z*o,e.strokeStyle=&quot;rgba(102,175,239,.2)&quot;,e.beginPath(),e.moveTo(t.x,t.y);var n=2*y.x,a=2*y.y;Math.abs(n)&lt;.1&amp;&amp;(n=.5),Math.abs(a)&lt;.1&amp;&amp;(a=.5),e.lineTo(t.x+n,t.y+a),e.stroke()&#125;),requestAnimationFrame(t)&#125;(),window.addEventListener(&quot;resize&quot;,m),window.addEventListener(&quot;mousemove&quot;,function(t)&#123;var n,a,e;n=t.clientX,t=t.clientY,&quot;number&quot;==typeof d&amp;&amp;&quot;number&quot;==typeof h&amp;&amp;(a=n-d,e=t-h,y.tx=y.x+a/8*o*1,y.ty=y.y+e/8*o*1),d=n,h=t&#125;),window.addEventListener(&quot;mouseleave&quot;,function()&#123;h=d=null&#125;)&#125;();
-</code></pre>
-<p>鼠标指针特效</p>
-<ul>
-<li>找到<code>themes/practicex/layout/layout.ejs</code>,在<code>&lt;body&gt;&lt;body/&gt;</code>标签之间<br>添加如下内容:</li>
-</ul>
-<pre><code class="html">&lt;div id=&quot;cursor&quot;&gt;&lt;/div&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/cursor.min.css&quot; /&gt;
-&lt;script src=&quot;/js/cursor.min.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-<ul>
-<li>找到<code>themes/practicex/source/css</code>,添加<code>cursor.min.css</code>文件(可新建空txt文件，重命名cursor.min.cs)<br>添加如下内容:</li>
-</ul>
-<pre><code class="js">#cursor&#123;position:fixed;width:16px;height:16px;border-radius:8px;background:#000;opacity:0;transition:opacity .2s,-webkit-transform .2s;transition:opacity .2s,transform .2s;transition:opacity .2s,transform .2s,-webkit-transform .2s;z-index:32767;pointer-events:none&#125;#cursor.visible&#123;opacity:.25&#125;#cursor.hover&#123;opacity:.1;-webkit-transform:scale(2.5);transform:scale(2.5)&#125;#cursor.active&#123;opacity:.5;-webkit-transform:scale(.5);transform:scale(.5)&#125;
-</code></pre>
-<ul>
-<li>找到<code>themes/practicex/source/js</code>,添加<code>cursor.min.js</code>文件(可新建空txt文件，重命名cursor.min.js)<br>添加如下内容:</li>
-</ul>
-<pre><code class="js">function _createForOfIteratorHelper(e,t)&#123;var n,r,o,a,i=&quot;undefined&quot;!=typeof Symbol&amp;&amp;e[Symbol.iterator]||e[&quot;@@iterator&quot;];if(i)return r=!(n=!0),&#123;s:function()&#123;i=i.call(e)&#125;,n:function()&#123;var e=i.next();return n=e.done,e&#125;,e:function(e)&#123;r=!0,o=e&#125;,f:function()&#123;try&#123;n||null==i.return||i.return()&#125;finally&#123;if(r)throw o&#125;&#125;&#125;;if(Array.isArray(e)||(i=_unsupportedIterableToArray(e))||t&amp;&amp;e&amp;&amp;&quot;number&quot;==typeof e.length)return i&amp;&amp;(e=i),a=0,&#123;s:t=function()&#123;&#125;,n:function()&#123;return a&gt;=e.length?&#123;done:!0&#125;:&#123;done:!1,value:e[a++]&#125;&#125;,e:function(e)&#123;throw e&#125;,f:t&#125;;throw new TypeError(&quot;Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.&quot;)&#125;function _unsupportedIterableToArray(e,t)&#123;var n;if(e)return&quot;string&quot;==typeof e?_arrayLikeToArray(e,t):&quot;Map&quot;===(n=&quot;Object&quot;===(n=Object.prototype.toString.call(e).slice(8,-1))&amp;&amp;e.constructor?e.constructor.name:n)||&quot;Set&quot;===n?Array.from(e):&quot;Arguments&quot;===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?_arrayLikeToArray(e,t):void 0&#125;function _arrayLikeToArray(e,t)&#123;(null==t||t&gt;e.length)&amp;&amp;(t=e.length);for(var n=0,r=new Array(t);n&lt;t;n++)r[n]=e[n];return r&#125;!function()&#123;function t(e,t,n)&#123;return(1-n)*e+n*t&#125;var n=document.getElementById(&quot;cursor&quot;),r=&#123;pre:null,now:null&#125;,o=document.getElementsByTagName(&quot;*&quot;),a=[];window.addEventListener(&quot;load&quot;,function()&#123;var e,t=_createForOfIteratorHelper(o);try&#123;for(t.s();!(e=t.n()).done;)&#123;var n=e.value;&quot;pointer&quot;==window.getComputedStyle(n).cursor&amp;&amp;a.push(n.outerHTML)&#125;&#125;catch(e)&#123;t.e(e)&#125;finally&#123;t.f()&#125;var r=document.createElement(&quot;style&quot;);r.innerHTML=&#39;* &#123; cursor: url(&quot;data:image/svg+xml, &lt;svg xmlns=\\&quot;http://www.w3.org/2000/svg\\&quot; viewBox=\\&quot;0 0 8 8\\&quot; width=\\&quot;8px\\&quot; height=\\&quot;8px\\&quot;&gt;&lt;circle cx=\\&quot;4\\&quot; cy=\\&quot;4\\&quot; r=\\&quot;4\\&quot; opacity=\\&quot;.5\\&quot;/&gt;&lt;/svg&gt;&quot;) 4 4, auto !important; &#125;&#39;,document.body.appendChild(r)&#125;),document.addEventListener(&quot;mouseover&quot;,function(e)&#123;a.includes(e.target.outerHTML)&amp;&amp;n.classList.add(&quot;hover&quot;)&#125;),document.addEventListener(&quot;mouseout&quot;,function(e)&#123;a.includes(e.target.outerHTML)&amp;&amp;n.classList.remove(&quot;hover&quot;)&#125;),document.addEventListener(&quot;mousemove&quot;,function(e)&#123;r.now||(n.style.left=e.clientX-8+&quot;px&quot;,n.style.top=e.clientY-8+&quot;px&quot;),r.now=&#123;x:e.clientX-8,y:e.clientY-8&#125;,n.classList.add(&quot;visible&quot;)&#125;),document.addEventListener(&quot;mouseenter&quot;,function()&#123;n.classList.add(&quot;visible&quot;),r.pre=null&#125;),document.addEventListener(&quot;mouseleave&quot;,function()&#123;n.classList.remove(&quot;visible&quot;)&#125;),document.addEventListener(&quot;mousedown&quot;,function()&#123;n.classList.add(&quot;active&quot;)&#125;),document.addEventListener(&quot;mouseup&quot;,function()&#123;n.classList.remove(&quot;active&quot;)&#125;);requestAnimationFrame(function e()&#123;r.pre?(r.pre=&#123;x:t(r.pre.x,r.now.x,.15),y:t(r.pre.y,r.now.y,.15)&#125;,n.style.left=r.pre.x+&quot;px&quot;,n.style.top=r.pre.y+&quot;px&quot;):r.pre=r.now,requestAnimationFrame(e)&#125;)&#125;();
-</code></pre>
-<p>更多自定义设置请参考<a target="_blank" rel="noopener" href="https://argvchs.github.io/">Argvchs</a>大佬在<a target="_blank" rel="noopener" href="https://argvchs.github.io/2022/04/17/hexo-blog-3/">Hexo 博客搭建Ⅲ</a></p>
-<h2 id="二-将博客部署到Github-Pages上"><a href="#二-将博客部署到Github-Pages上" class="headerlink" title="二.将博客部署到Github Pages上"></a>二.将博客部署到Github Pages上</h2><h3 id="1-配置SSH密钥-实现本地代码与Github代码库同步"><a href="#1-配置SSH密钥-实现本地代码与Github代码库同步" class="headerlink" title="1.配置SSH密钥(实现本地代码与Github代码库同步)"></a>1.配置SSH密钥(实现本地代码与Github代码库同步)</h3><p>前往<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>的个人主页(若无则先创建账号)</p>
-<p>点击<code>New</code>新建仓库,名称为<code>&lt;Github用户名&gt;.github.io</code>,然后点击<code>Create repositpory</code>完成创建</p>
-<p>在个人博客根目录下，右键鼠标，选择<code>Git Bash Here</code></p>
-<pre><code class="bash">#输入完后，按回车(可能4次就行)即可
-ssh-keygen -t rsa -C &lt;你的邮箱&gt;
-</code></pre>
-<p>添加到SSH-Agent</p>
-<pre><code class="bash">eval &quot;$(ssh-agent -s)&quot;
-ssh-add ~/.ssh/id_ed25519
-</code></pre>
-<p>拷贝公钥</p>
-<pre><code class="bash">#该公钥一般存在 C 盘 user 中，此命令失败的话可以直接找到该文件并且用记事本打开复制
-clip &lt; ~/.ssh/id_rsa.pub
-</code></pre>
-<p>在Github中添加你的公钥</p>
-<blockquote>
-<ul>
-<li>登录Github，进入settings</li>
-<li>点击SSH and GPG Keys</li>
-<li>点New SSH Key</li>
-<li>将拷贝的公钥复制在key中(title可不写),点击Add SSH Key</li>
-</ul>
-</blockquote>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在桌面空白处鼠标右键,选择<code>Git Bash Here</code></p>
-<pre><code class="bash">#输入完且回车后，再输入`yes`回车
-ssh -T git@github.com
-</code></pre>
-<p>如果出现 <code>Hi! You&#39;ve successfully authenticated</code> 则配置成功</p>
-<h3 id="3-部署到Github-Pages"><a href="#3-部署到Github-Pages" class="headerlink" title="3.部署到Github Pages"></a>3.部署到Github Pages</h3><p>进入bash界面输入</p>
-<pre><code class="bash">#&lt;user&gt;处填写自己的Github用户名,&lt;email&gt;同理
-git config --global user.name &quot;&lt;user&gt;&quot;
-git config --global user.email &quot;&lt;email&gt;&quot;
-</code></pre>
-<p>进入博客根目录，找到<code>_config.yml</code><br>设置参数  </p>
-<pre><code class="yaml">#&lt;user&gt;处填写自己的Github用户名
-url: https://&lt;user&gt;.github.io/
-deploy:
-    type: git
-    repo: git@github.com:&lt;user&gt;/&lt;user&gt;.github.io.git
-    branch: master
-    message:
-</code></pre>
-<p>安装部署插件</p>
-<pre><code class="bash">pnpm add hexo-deployer-git
-</code></pre>
-<p>将自己的博客部署到Github上</p>
-<pre><code class="bash">hexo d -g
-</code></pre>
-<h2 id="三-将网站托管到Vercel上-可以加速页面访问"><a href="#三-将网站托管到Vercel上-可以加速页面访问" class="headerlink" title="三.将网站托管到Vercel上(可以加速页面访问)"></a>三.将网站托管到Vercel上(可以加速页面访问)</h2><ul>
-<li><p>进入<a target="_blank" rel="noopener" href="https://vercel.com/">vercele网页</a>,用GitHub账号登录</p>
-</li>
-<li><p>点击<code>New project</code>，再点击&#96;&#96;,找到自己创建的博客仓库，点击旁边的<code>import</code></p>
-</li>
-<li><p>跳转后在<code>Import Git Repository</code>中选择你的<code>Hexo</code>博客仓库</p>
-</li>
-<li><p>跳转后点击<code>Deploy</code>上传到 Vercel</p>
-</li>
-<li><p>上传完成点击<code>Goto Dashboard</code>来到项目主页，选择顶部的<code>Settings</code>，在<code>Project Name</code>中更改你网站的名称(域名)</p>
-</li>
-</ul>
-<h2 id="四-我建站遇到的一些问题"><a href="#四-我建站遇到的一些问题" class="headerlink" title="四.我建站遇到的一些问题"></a>四.我建站遇到的一些问题</h2><h3 id="1-中文乱码"><a href="#1-中文乱码" class="headerlink" title="1.中文乱码"></a>1.中文乱码</h3><p>在博客<code>_config.yml</code>的参数中，若要使用中文，需要修改语言参数</p>
-<pre><code class="yaml">#具体是zh-CN，还是zh-Hans,需要根据主题说明设定。
-language: zh-CN
-</code></pre>
-<p>此外还有编码问题</p>
-<p>可能你打开<code>_config.yml</code>文件所使用的阅读器默认编码格式非<code>utf-8</code>(Windows自带记事本默认<code>ANSI</code>编码格式)<br>故而保存后，也是以<code>非utf-8</code>的编码格式保存的，故而乱码</p>
-<p>除了<code>_config.yml</code>文件，其他界面，例如文章的md等文件，也要注意编码问题，将其以<code>utf-8</code>编码格式保存。</p>
-<h3 id="2-代码高亮异常-代码块显示异常"><a href="#2-代码高亮异常-代码块显示异常" class="headerlink" title="2.代码高亮异常(代码块显示异常)"></a>2.代码高亮异常(代码块显示异常)</h3><p>建站成功后，博客会自动生成一个<code>hello world</code>文章<br>但是文章中的代码块区域，会被分为两块，且语言类型提示全部是<code>line</code>，不符合文件md中的效果<br>自己写了一篇测试文章后，也是同样的问题<br>通过翻阅各种博客文件，最后在根目录的<code>_config.yml</code>中找到了关键词<code>line-number</code>中的<code>line</code><br>对比后发现也确实是这里的问题<br>经过查阅网上资料，得知高版本的Hexo自带<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/syntax-highlight.html">代码高亮</a>和行数显示<br>这与[主题ParticelX]的代码高亮冲突(转义时会添加部分信息，从而冲突)。<br>故在博客根目录<code>_config.yml</code>中，将hexo自带高亮关闭<br>具体修改如下:</p>
-<pre><code class="yaml">highlight:
-    enable: false
-prismjs:
-    enable: false
-</code></pre>
-<p>其实<a target="_blank" rel="noopener" href="https://argvchs.github.io/">Argvchs</a>大佬在<a target="_blank" rel="noopener" href="https://argvchs.github.io/2022/05/10/hexo-theme-particlex/">ParticleX主题使用说明</a>提到过这个问题，但不妨碍我瞎啊(悲)</p>
-<p>所以，还是建议大家使用主题的时候，仔细阅读相关的主题使用说明，配置好参数。</p>
-<h2 id="后言-哈哈"><a href="#后言-哈哈" class="headerlink" title="后言(哈哈)"></a>后言(哈哈)</h2><p>2023.05.03这天也是我第一次创建博客，跟着大佬的教程创建好了之后，心里十分高兴。<br>可以把博客当作自己的小窝，做一下学习笔记，发表一下人生感慨什么的，也不失为一件美事<br>四舍五入那就是大佬帮我造了房子，大恩呐<br>感慨有余，也希望能够帮助到别人<br>第一次写博客，结构和内容可能会很乱，还请大家包涵<br>等我有了经验和时间之后修正哈哈<br>再次感谢<a target="_blank" rel="noopener" href="https://argvchs.github.io/">Argvchs</a>大佬的教程，<a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX</a>也是真滴好康<br>最后，祝大家身体健康，学习进步，一起努力鸭</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Hexo/" style="color: #ffa2c4">Hexo</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/ParticleX/" style="color: #ff7d73">ParticleX</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color: #00a596">博客</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/03/%E5%9F%BA%E4%BA%8EHexo%E5%92%8CParticleX%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/05/02/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/">
-        <h2 class="post-title">测试博客</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><p>代码测试：</p>
-<pre><code class="java">print(&quot;哈哈&quot;)
-print(&quot;Hello&quot;)
-</code></pre>
-<p>图片测试：<br>1)网上图片<br><img src="http://mculover666.cn/blog/20191031/R4mWMXsrRKxu.png?imageslim"><br>2)本地图片<br><img src="/images/text.png"></p>
-<p>引用测试：</p>
-<blockquote>
-<p>这是一条引用</p>
-</blockquote>
-<p>第二个引用测试:</p>
-<blockquote>
-<p>这也是一条引用</p>
-</blockquote>
-<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>无序列表测试：</p>
-<ul>
-<li>哈哈</li>
-<li>嘿嘿</li>
-<li>吼吼</li>
-</ul>
-<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/05/02/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/05/02/hello-world/">
-        <h2 class="post-title">Hello World</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/05/02/hello-world/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">1</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
-
     </div>
     
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style">
-        <div class="avatar">
-            <img src="/images/zhenxun.jpg" alt="avatar" />
-        </div>
-        <div class="name">Qhe</div>
-        <div class="description">
-            <p>一只飞鸟啼叫着，在一片无名的蓝天里寻找自我</p>
-
-        </div>
-        
-        <div class="icon-links">
-            
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
-            </div>
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://youhuamao.github.io">幽化猫</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
+    
+    
+    
+    
+    
     
 </div>
 
@@ -1709,6 +1193,12 @@ print(&quot;Hello&quot;)
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
