@@ -178,6 +178,99 @@
         
 
 <div class="post">
+    <a href="/2023/05/06/Java-%E7%B1%BB%E5%8A%A0%E8%BD%BD/">
+        <h2 class="post-title">Java-类加载</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/Java/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Java
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/6
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="基本说明"><a href="#基本说明" class="headerlink" title="基本说明"></a>基本说明</h2><p>反射机制是java实现动态语言的关键，也就是通过反射实现类动态加载。</p>
+<ul>
+<li>静态加载:编译时加载相关的类，如果没有则报错，依赖性太强。(new 类)</li>
+<li>动态加载:运行时加载所需要的类，如果运行时不用该类，即不存在该类，则不报错，降低依赖性(通过Class对象创建)</li>
+</ul>
+<h2 id="类加载时机"><a href="#类加载时机" class="headerlink" title="类加载时机"></a>类加载时机</h2><ul>
+<li>当创建对象时(new) <code>静态加载</code></li>
+<li>当子类被加载时，父类也加载 <code>静态加载</code></li>
+<li>调用类中的静态成员 <code>静态加载</code></li>
+<li>通过反射 <code>动态加载</code></li>
+</ul>
+<h2 id="类加载过程图"><a href="#类加载过程图" class="headerlink" title="类加载过程图"></a>类加载过程图</h2><p><img src="/./images/Java/ClassLoading.png"></p>
+<h2 id="类加载三个阶段："><a href="#类加载三个阶段：" class="headerlink" title="类加载三个阶段："></a>类加载三个阶段：</h2><p>加载和连接由JVM机操作，不可操作。<br>初始化：可由程序员指定的，对静态数据的操作(静态代码块等)。</p>
+<h3 id="加载阶段"><a href="#加载阶段" class="headerlink" title="加载阶段:"></a>加载阶段:</h3><p>JVM在该阶段的主要目的是将字节码文件从不同的数据源(class文件、jar包甚至网络等)转化为二进制字节流加载到内存中，并生成一个该类的java.lang.Class对象<br>(将其加载到字节码文件加载到方法区，并在堆中生成Class类对象)</p>
+<h3 id="连接阶段"><a href="#连接阶段" class="headerlink" title="连接阶段:"></a>连接阶段:</h3><p>连接Linking(验证、准备、解析):将类的二进制数据合并到JRE中(进入运行环境，成为可运行状态)</p>
+<pre><code>+ 对字节码文件进行安全性验证；
++ 对静态变量进行默认初始化；
++ 将符号引用转为直接引用。
+</code></pre>
+<h5 id="验证"><a href="#验证" class="headerlink" title="验证:"></a>验证:</h5><ol>
+<li>确保Class文件的字节流中信息符合虚拟机的要求，且不会对虚拟机产生危害</li>
+<li>包括:文件格式验证,元数据验证,字节码验证和符号引用验证</li>
+</ol>
+<h5 id="准备"><a href="#准备" class="headerlink" title="准备:"></a>准备:</h5><p>JVM在该阶段对静态变量分配内存并<strong>默认初始化</strong>(对应数据类型的默认初始化值,如0,0L,null,false等).</p>
+<pre><code class="java">Class A&#123;
+    //n1是实例属性,不是静态变量,在准备阶段不会分配内存;
+    //n2是静态变量,会被分配内存,然后被默认初始化为0;(初始化阶段执行代码成为20)
+    //n3是static final 是常量,一旦赋值就不变,初始化为30;
+    int n1 = 10;
+    public static n2 = 20;
+    public static final n3 = 30;
+&#125;
+</code></pre>
+<h4 id="解析"><a href="#解析" class="headerlink" title="解析:"></a>解析:</h4><p>虚拟机将常量池内的符号引用(无实际内存地址)转替换为直接引用(地址引用,已经在内存中且有了Class对象)的过程.</p>
+<h3 id="初始化阶段"><a href="#初始化阶段" class="headerlink" title="初始化阶段:"></a>初始化阶段:</h3><p>初始化initialization:JVM负责对类进行初始化,主要指类的静态成员</p>
+<pre><code>1. 真正执行类中定义的Java程序代码,执行\&lt;clint&gt;()方法的过程
+2. \&lt;clint&gt;()方法是由编译器按语句在源文件中出现的顺序,依次自动收集所有静态变量的赋值动作和静态代码块中的语句,进行合并.
+3. 虚拟机会保证一个类的\&lt;clint&gt;()方法在多线程环境中被正确加锁,同步(多个线程同时初始化一个类,只会有一个线程执行,其余线程阻塞等待)
+</code></pre>
+<p>第三点的加锁机制保证了某个类在内存中,只有一个份Class对象.</p>
+<h3 id="类加载后内存布局情况"><a href="#类加载后内存布局情况" class="headerlink" title="类加载后内存布局情况:"></a>类加载后内存布局情况:</h3><p>将字节码文件以二进制的形式保存在方法区<br>在堆区生成字节码对应的数据结构(类的Class对象：一种数据结构，是数据的访问入口)</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Java/" style="color: #ffa2c4">Java</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%8F%8D%E5%B0%84/" style="color: #03a9f4">反射</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/06/Java-%E7%B1%BB%E5%8A%A0%E8%BD%BD/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2023/05/05/Socket%E7%AE%80%E5%8D%95%E8%81%8A%E5%A4%A9%E5%AE%A4/">
         <h2 class="post-title">Socket简单聊天室</h2>
     </a>
@@ -220,7 +313,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Java/" style="color: #ffa2c4">Java</a>
+            <a href="/tags/Java/" style="color: #ff7d73">Java</a>
         </span>
         
         <span class="tag">
@@ -230,7 +323,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="color: #03a9f4">网络编程</a>
+            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="color: #00bcd4">网络编程</a>
         </span>
         
     </div>
@@ -277,7 +370,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Sublime-Text3/" style="color: #ffa2c4">Sublime Text3</a>
+            <a href="/tags/Sublime-Text3/" style="color: #00bcd4">Sublime Text3</a>
         </span>
         
     </div>
