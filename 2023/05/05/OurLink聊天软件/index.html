@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>OurLink | Qheの小窝</title>
+        <meta name="author" content="Qhe" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/zhenxun.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+<div id="cursor"></div>
+<link rel="stylesheet" href="/css/cursor.min.css" />
+<script src="/js/cursor.min.js"></script>
+<canvas
+    id="background"
+    style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1"
+></canvas>
+<script src="/js/background.min.js"></script>
+<canvas
+    id="fireworks"
+    style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+></canvas>
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+<script src="/js/fireworks.min.js"></script>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>QHEの小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;QHEの小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>OurLink</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/5
+        </span>
+        
+        <span class="category">
+            <a href="/categories/Java/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Java
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #ffa2c4">Java</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Socket/" style="color: #ffa2c4">Socket</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="color: #ff7d73">网络编程</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h3 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h3><p>我们的项目名称为PP聊天，是一款基于TCP连接和多线程的聊天软件。<br>该项目可以像QQ、微信等软件一样与好友进行聊天，而不必像聊天室那样局限于一个窗口和聊天双方均在线。</p>
+<h3 id="开发环境："><a href="#开发环境：" class="headerlink" title="开发环境："></a>开发环境：</h3><p>java1.8<br>MySQL:8.0.27	(随项目附带的mysql包同为8.0.27版本)</p>
+<p><code>使用说明</code>：<br>ChatServer文件中包含数据库文件PPchat-2023.06.12.sql，运行服务端前需要自行导入<br>若出现报错，请尝试分别在客户端和服务端导入lib下的jar包.</p>
+<span id="more"></span>
+<h3 id="服务端用到的依赖："><a href="#服务端用到的依赖：" class="headerlink" title="服务端用到的依赖："></a>服务端用到的依赖：</h3><p>数据库查询结果封装工具：commns-dbutils-1.7.jar<br>德鲁伊连接池：druid-1.2.8.jar<br>MySQL接口：mysql-connector-java-8.0.27.jar  </p>
+<h3 id="客户端用到的依赖："><a href="#客户端用到的依赖：" class="headerlink" title="客户端用到的依赖："></a>客户端用到的依赖：</h3><p>日历控件：datepicker.jar	用于客户端聊天中查看选中日期的聊天记录</p>
+<h3 id="数据库介绍："><a href="#数据库介绍：" class="headerlink" title="数据库介绍："></a>数据库介绍：</h3><ul>
+<li><h5 id="用户表-tbl-user"><a href="#用户表-tbl-user" class="headerlink" title="用户表(tbl_user)"></a>用户表(tbl_user)</h5></li>
+</ul>
+<p>以自增的int类型的id为主键，还有name(VARCHAR)，password(VARCHAR)，age(INT)，sex(INT)，phone(VARCHAR)，birthDay(TIMESTAMP)，signature(VARCHAR)，registerTime(TIMESTAMP)用户基本信息。</p>
+<ul>
+<li><h5 id="好友关系表-tbl-friend"><a href="#好友关系表-tbl-friend" class="headerlink" title="好友关系表(tbl_friend)"></a>好友关系表(tbl_friend)</h5></li>
+</ul>
+<p>INT类型的userID和friendID均通过外键与tbl_user表中的id属性关联<br>均为VARCHAR类型的userRemark和friendRemark两个属性在本项目中暂未体现（用于好友备注功能）</p>
+<ul>
+<li><h5 id="聊天信息表-tbl-chat"><a href="#聊天信息表-tbl-chat" class="headerlink" title="聊天信息表(tbl_chat)"></a>聊天信息表(tbl_chat)</h5></li>
+</ul>
+<p>以自增长且为INT类型的的id为主键，用于标记唯一消息记录。<br>其为INT类型的sender和reciver通过外键与tbl_user表中的id属性关联，用于标识发送方和接收方。<br>VARCHAR类型的content即聊天内容<br>INT类型的status标识该条消息是否已读（对于接收方）<br>sendTime用于记录该消息的具体发送时间</p>
+<h3 id="项目分层"><a href="#项目分层" class="headerlink" title="项目分层"></a>项目分层</h3><p>该项目总体结构采用MVC模式，分为模型、视图、和控制器三个部分。<br>其中视图部分即frame，java窗口界面；<br>模型部分即pojo，有User、Message、Friends三个携带数据和状态的请求和结果；<br>控制器部分即service，内含MG单例管理类来连接各个模型与视图。</p>
+<h3 id="项目展示"><a href="#项目展示" class="headerlink" title="项目展示"></a>项目展示</h3><h3 id="项目特点"><a href="#项目特点" class="headerlink" title="项目特点"></a>项目特点</h3><ul>
+<li><h5 id="好友系统"><a href="#好友系统" class="headerlink" title="好友系统"></a>好友系统</h5></li>
+</ul>
+<p>通过建立关系数据库，存放两个用户之间的好友关系，并基于好友关系，进行聊天等多种功能。</p>
+<ul>
+<li><h5 id="聊天信息保留"><a href="#聊天信息保留" class="headerlink" title="聊天信息保留"></a>聊天信息保留</h5></li>
+</ul>
+<p>本项目中的聊天功能，如离线聊天、消息提示窗口等，均是在将所有消息保存在数据库的基础上，<br>通过对数据库进行相应查询。</p>
+<ul>
+<li><h5 id="自定义协议接口MessageType"><a href="#自定义协议接口MessageType" class="headerlink" title="自定义协议接口MessageType"></a>自定义协议接口MessageType</h5></li>
+</ul>
+<p>用接口中的变量名代替具体字符串内容，使功能更清晰，既便于使用也便于维护和拓展新功能。</p>
+<ul>
+<li><h5 id="使用序列化流和反序列化流传输信息"><a href="#使用序列化流和反序列化流传输信息" class="headerlink" title="使用序列化流和反序列化流传输信息"></a>使用序列化流和反序列化流传输信息</h5></li>
+</ul>
+<p>序列化流（ObjectOutputStream）用于将对象写入输出流，可以将对象转化为字节流并输出到文件、网络等。<br>反序列化流（ObjectInputStream）用于从输入流中读取字节流并还原为对象。  </p>
+<p>在该项目中，通过服务器中转的信息包含发送方ID，接收方ID，信息字符串内容，以及附加内容（Object类，可用于传输List&lt;T&gt;、User对象和byte[]等对象）,故而采用序列化流传输更为方便。<br>User类和Message类继承序列化接口，可通过Object序列化流直接传输</p>
+<ul>
+<li><h5 id="使用ConcurrentHashMap存放在线用户集合等"><a href="#使用ConcurrentHashMap存放在线用户集合等" class="headerlink" title="使用ConcurrentHashMap存放在线用户集合等"></a>使用ConcurrentHashMap存放在线用户集合等</h5></li>
+</ul>
+<p>ConcurrentHashMap 是 Java 中的一个线程安全的哈希表实现，它是 HashMap 的线程安全版本。与 HashMap 不同的是，ConcurrentHashMap 支持同时进行读写操作，同时还能保持线程安全性和高并发性能。</p>
+<p>本项目中，用ConcurrentHashMap存放了客户端的ChatWin(用户与好友的聊天界面)、onlines(在线用户列表)、friends(好友列表)以及服务端的在线用户列表,从而避免因更新列表等操作而导致的线程不安全的行为。</p>
+<pre><code>ConcurrentHashMap 的主要特点包括：
+
+线程安全：ConcurrentHashMap 使用了分段锁技术（Segment），将哈希表分成多个段（Segment），每个段都有自己的锁。这使得多个线程可以同时访问不同的段，从而提高并发性能。
+
+高并发性能：相比于传统的同步容器，ConcurrentHashMap 在读操作上可以提供原子性和线程安全，且可以支持多个线程同时进行读操作，从而提高了并发性能。
+
+数据一致性：ConcurrentHashMap 对写操作（插入、修改、删除等）进行了同步处理，保证了数据的一致性。
+
+迭代器弱一致性：由于 ConcurrentHashMap 是分段的，并发修改操作只会锁住相关的段，非修改操作可以并发进行，这可能导致在迭代器遍历过程中，元素的修改可能不会立即反映到迭代器中。
+
+ConcurrentHashMap 是在多线程环境下使用的一种高效的哈希表实现，适用于高并发的场景，尤其适合于读多写少的场景。
+</code></pre>
+<ul>
+<li><h5 id="联机象棋游戏"><a href="#联机象棋游戏" class="headerlink" title="联机象棋游戏"></a>联机象棋游戏</h5></li>
+</ul>
+<p>可以进行好友间的象棋游戏</p>
+<ul>
+<li><h5 id="服务端、客户端读取目标主机的方式"><a href="#服务端、客户端读取目标主机的方式" class="headerlink" title="服务端、客户端读取目标主机的方式"></a>服务端、客户端读取目标主机的方式</h5></li>
+</ul>
+<p>通过FileInputStream流读取配置文件，然后再通过Properties的load方法加载读取文件流，然后通过getProperty方法获取IP和端口的参数。</p>
+<p>服务端开启服务:</p>
+<pre><code class="Java">Properties properties = new Properties();
+properties.load(new FileInputStream(&quot;./src/server.properties&quot;));
+String port = properties.getProperty(&quot;port&quot;);
+server = new ServerSocket(Integer.parseInt(port));
+new ServerListener(server).start();
+</code></pre>
+<p>客户端注册和登录:</p>
+<pre><code class="Java">Properties properties = new Properties();
+properties.load(new FileInputStream(&quot;./src/client.properties&quot;));
+String port = properties.getProperty(&quot;port&quot;);
+String ip = properties.getProperty(&quot;ip&quot;);
+socket = new Socket(ip,Integer.parseInt(port));
+</code></pre>
+<h3 id="主要功能介绍"><a href="#主要功能介绍" class="headerlink" title="主要功能介绍"></a>主要功能介绍</h3><ul>
+<li><h5 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h5></li>
+</ul>
+<ol>
+<li>登录注册功能的区分：两者向服务端发送请求时，均会封装一个User对象，通过判断该对象的id是否为空来确定是哪种操作。</li>
+</ol>
+<pre><code class="Java"> if (user.getId() == null)&#123;
+    //客户端传来的user对象无id,注册操作
+    ...
+&#125;else&#123;
+    //客户端传来的user对象有id，登陆操作
+    ...
+&#125;
+</code></pre>
+<ol start="2">
+<li>账号查重：将登录信息发送至服务端后，服务端首先通过用户名查询数据库，若返回值不为空，则账户存在。</li>
+</ol>
+<pre><code class="Java">//判断是否有重名用户
+User u = userDaoImpl.getUserByName(user.getName());
+if (u != null)&#123;
+    //该账户已存在，返回false
+    return false;
+&#125;else &#123;
+    //可以注册
+    userDaoImpl.addUser(user);
+    return true;
+&#125;
+</code></pre>
+<ul>
+<li><h5 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h5></li>
+</ul>
+<ol>
+<li>用户重复登录判断<br>在服务端处，如果登录信息验证成功后，再遍历在线用户的列表，查看是否已经登陆。如果登录，则原用户被顶替下线，当前账户登录成功。</li>
+</ol>
+<pre><code class="Java">//判断该账户是否已登录
+if (ServerMG.getServerMG().getServerThread(user.getId()) != null)&#123;
+    //该账号已登录，则使原登录客户端下线
+    message.setMsgType(MessageType.LOGIN_AGAIN);
+    ServerMG.getServerMG().getServerThread(user.getId()).sendMessage(message);
+&#125;
+</code></pre>
+<ol start="2">
+<li>验证id和密码</li>
+</ol>
+<pre><code class="Java">public boolean login(User user)&#123;
+    //通过id查询数据库，返回user（也可以通过id和password两个参数，查询user是否存在）
+    User u = userDaoImpl.getUserByID(user.getId());
+    if (user != null &amp;&amp; u.getPassword().equals(user.getPassword()))&#123;
+        return true;
+    &#125;
+    return false;
+&#125;
+</code></pre>
+<ul>
+<li><h5 id="好友系统-1"><a href="#好友系统-1" class="headerlink" title="好友系统"></a>好友系统</h5></li>
+</ul>
+<ol>
+<li>好友显示<br>好友列表为一个JList控件，其ListModel为friendList。<br>在客户端登陆时，向服务器发送好友列表请求，请求获取该用户的所有好友。服务器返回该用户的好友存并至friends的列表集合中。<br>然后客户端更新MainWin（本项目的用户端主程序界面）中的friendListj,即可显示该用户的好友。</li>
+<li>在线好友标黑,离线好友标灰<br>客户端登陆时，向服务器发送在线用户请求，获取目前在线的用户列表，并存至onlines中。<br>然后客户端更新MainWin中的onlineList。<br>之后通过列表单元渲染器来实现JList不同行内容样式的变化。<br>创建JListCellRenderer类(继承DefaultListCellRenderer)，并好友列表的渲染器设为该类的实例化对象.<br>在该类中，通过重写getListCellRendererComponent()方法<br>以下是该方法中的与该功能相关的代码。</li>
+</ol>
+<pre><code class="Java">//在线用户名字黑色标记
+if (ClientMG.getClientMG().getMainWin().onlineList.contains(value.toString()))&#123;
+    setForeground(Color.BLACK);
+&#125;
+</code></pre>
+<ol start="3">
+<li>添加好友：发送添加好友请求、添加成功后更新双方好友列表<br>客户端向服务器发送添加好友请求，服务器转发请求至目标用户。目标客户端接收到服务器转发的请求，并弹出好友请求窗口，可以选择是否同意。<br>在该项目中，添加好友界面可通过目标用户名查询好友，也可以通过在线用户推荐查询，并将查询到的用户展示在JTable中。<br>JTable会显示查询用户的基本信息，以及添加好友按钮。<br>在表格中添加按钮功能通过创建一个自定义的表格渲染器和编辑器类ButtonRendererEditor来实现。<br>该类继承了AbstractCellEditor类，并且实现TableCellRenderer和TableCellEditor接口。<br>ButtonRendererEditor.java</li>
+</ol>
+<pre><code class="Java">
+public class ButtonRendererEditor extends AbstractCellEditor implements TableCellRenderer, TableCellEditor &#123;
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) &#123;
+           JButton button = new JButton(&quot;添加好友&quot;);
+           //添加按钮的监听器，当按钮点击时，可以进行一些逻辑处理
+           button.addActionListener(new ActionListener() &#123;
+              public void actionPerformed(ActionEvent e) &#123;
+                 //实现逻辑
+              &#125;
+           &#125;);
+           return button;
+        &#125;
+
+        public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) &#123;
+           JButton button = new JButton(&quot;添加好友&quot;);
+           //添加按钮的监听器，当按钮点击时，可以进行一些逻辑处理
+           button.addActionListener(new ActionListener() &#123;
+              public void actionPerformed(ActionEvent e) &#123;
+                  //好友申请
+                  Integer reciver = Integer.parseInt(table.getModel().getValueAt(row,0) + &quot;&quot;);
+                  //判断是否是自己
+                  if (reciver.equals(ClientMG.getClientMG().getUser().getId()))&#123;
+                      JOptionPane.showMessageDialog(null,&quot;油饼？&quot;);
+                      fireEditingStopped(); //当按钮被点击后，需要调用该方法来终止编辑状态
+                      return;
+                  &#125;
+                  //判断是否已是好友
+                  for (User friend : ClientMG.getClientMG().getFriends()) &#123;
+                      if (friend.getId().equals(reciver))&#123;
+                          //已添加该好友
+                          JOptionPane.showMessageDialog(null,&quot;已经是好友，请勿重复添加！&quot;);
+                          fireEditingStopped(); //当按钮被点击后，需要调用该方法来终止编辑状态
+                          return;
+                      &#125;
+                  &#125;
+                  //请求服务端转发请求
+                  Message message = new Message();
+                  message.setMsgType(MessageType.REQUEST_FRIEND);
+                  message.setSender(ClientMG.getClientMG().getUser().getId());
+                  message.setReciver(reciver);
+                  message.setOther(ClientMG.getClientMG().getUser());
+                  ClientMG.getClientMG().getClientThread(ClientMG.getClientMG().getUser().getId()).sendMessage(message);
+
+               	  fireEditingStopped(); //当按钮被点击后，需要调用该方法来终止编辑状态
+              &#125;
+        &#125;);
+        return button;
+    &#125;
+
+        @Override
+        public Object getCellEditorValue() &#123;
+            // TODO Auto-generated method stub
+            return null;
+        &#125;
+&#125;
+</code></pre>
+<ul>
+<li><h5 id="消息系统"><a href="#消息系统" class="headerlink" title="消息系统"></a>消息系统</h5></li>
+</ul>
+<ol>
+<li>发送接收消息：<br> 聊天双方均打开聊天窗口:<br> 接收方接收到发送方的消息后，直接通过发送方id在chatWinList（聊天窗口集合）找到与接收方的聊天窗口，<br> 并将发送内容显示在该界面。最后向服务器发送消息已读，对数据库中该消息的状态进行更新。<br> 仅发送方打开聊天窗口:<br> 此时接收方并未打开聊天窗口，接收到服务器的转发后，进行右下角弹窗提示。并在好友列表中的发送方前面显示信息提示。<br> 该功能通过列表单元渲染器来实现,在JListCellRenderer类中重写getListCellRendererComponent()方法。<br> JListCellRenderer.java<pre><code class="Java">//用户发来消息改变JList样式
+    User u = null;
+    for (User friend : ClientMG.getClientMG().getFriends()) &#123;
+        if (friend.getName().equals(value.toString()))&#123;
+            u = friend;
+            break;
+        &#125;
+    &#125;
+    if (ClientMG.getClientMG().getUnreadMessageList().containsKey(u.getId()))&#123;
+        ImageIcon icon = new ImageIcon(&quot;imgs/messageList.png&quot;);
+        setIcon(icon);
+    &#125;else &#123;
+        setIcon(null);
+    &#125;
+</code></pre>
+ 接收方处于离线状态:<br> 由服务器存放消息到消息数据库，该消息状态为0（未读状态），并在接收方上线时，进行消息提示。</li>
+<li>未读消息提示：<br> 好友列表提示图标<br> 右下角弹窗提醒  </li>
+<li>历史聊天记录<br> 查看与好友所有聊天记录<br> 查看与好友某一日聊天记录<br> 因为所有消息均存至数据库中，故而通过发送方ID，接收方ID以及发送日期，可以具体定位到特定的聊天内容。<br> 在该功能中，为了增加客户端的体验，采用了日历控件实现日期选择，从而具体查询特定某天的聊天记录。</li>
+<li>窗口抖动:<br>发起用户向服务器发送请求，服务器转发至目标用户<br>窗口抖动代码</li>
+</ol>
+<pre><code class="Java">public void windowShake(ChatWin chatWin)&#123;
+        //窗口抖动
+        int x = chatWin.getLocation().x;
+        int y = chatWin.getLocation().y;
+        for (int i = 0;i &lt; 30 ; i++)&#123;
+            chatWin.setLocation(x + 5, y + 5);
+            chatWin.setLocation(x + 5, y - 5);
+            chatWin.setLocation(x - 5, y + 5);
+            chatWin.setLocation(x - 5, y - 5);
+            chatWin.setLocation(x, y);
+        &#125;
+    &#125;
+</code></pre>
+<ul>
+<li><h5 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h5></li>
+</ul>
+<p>文件传输的操作实现：<br>点击聊天窗口的传输按钮，首先判断接受用户是否在线，若不在线则弹窗提示。<br>打开文件选择控件，选择文件后，控件返回选择的文件对象(File对象).<br>然后发送者将要发送的文件转为字节数组，存放至Message对象的other属性中，随请求信息一同发送至服务端。<br>服务端将消息转发至接收者，由接收者判断是否接收。若接受，则通过字节数组，将文件保存至本地。<br>此外，发送者文件选择好后，对该聊天界面进行动态拓展：窗口宽度变大，显示传输文件区域，并显示要传输文件的基本信息。<br>文件下方有选择按钮，可以在文件未完全发送时取消文件发送。该功能通过在文件传输线程设立flag标识，按钮能将falg变为false<br>接收者接收到文件传输请求，也会对界面进行改变,显示文件信息，添加同意接收和取消按钮。  </p>
+<p>ClientFileThread.java:</p>
+<pre><code class="Java"> long currentFileSize = 0;
+long fileSize = 0;
+fileSize = file.length();
+BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));
+ByteArrayOutputStream bos = new ByteArrayOutputStream();
+byte[] b = new byte[1024];  //字节数组
+    int len;
+            while ((len = bis.read(b)) != -1)&#123;
+                //判断是否取消文件传输
+                if (isCanceled) &#123;
+                    System.out.println(&quot;文件传输已取消&quot;);
+                    break;
+                &#125;
+                bos.write(b,0,len); //将读取到的字节数组写入bos流中
+                currentFileSize += len;
+                int progress = (int) ((double) currentFileSize / (double) fileSize * 100.0);
+                SwingUtilities.invokeLater(new Runnable() &#123;
+                    public void run() &#123;
+                        progressBar.setValue(progress);
+                    &#125;
+                &#125;);
+            &#125;
+byte[] array = bos.toByteArray();   //将bos读取的内容转为自己数组
+</code></pre>
+<ul>
+<li><h5 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h5></li>
+</ul>
+<ol>
+<li>将自身线程从服务器的在线用户列表删除</li>
+<li>服务器向其他用户发送该用户退出，其他用户更新好友列表<br>客户端向服务器发送离线说明，服务端通过发送发ID，关闭服务端处的线程，并将其离线消息发送给其他用户<br>其他用户接收到该用户的离线消息后，更新自身在线用户列表。</li>
+</ol>
+<h3 id="后续拓展"><a href="#后续拓展" class="headerlink" title="后续拓展"></a>后续拓展</h3><p>在我们的项目基础上，还可以加上群组聊天，使我们的聊天软件更加完整。<br>后期也可以结合web项目，为用户提供分享日常的空间和云存储服务。<br>此外，我们的项目也可以就好友系统拓展出更多的不局限于双人的联机游戏。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Qheの小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Qhe
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>
